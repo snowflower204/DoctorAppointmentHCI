@@ -1,25 +1,18 @@
-import React, { useRef } from 'react'
+import React, { useState, useRef } from 'react'
 import WebWrapper from '../../components/website/WebWrapper'
 
 
 import '../../styles/Hero.css'
 import { Link } from 'react-router-dom'
-import { checkbox, cta, cta_yellow, tooth1, tooth2, tooth3, tooth4 } from '../../assets'
+import { about_1, about_2, about_3, about_4, checkbox, cta, cta_yellow, doctor_1, doctor_2, doctor_3, doctor_4, doctor_5, tooth1, tooth2, tooth3, tooth4 } from '../../assets'
 
 const Hero = () => {
   return (
     <WebWrapper>
       <HeroSection />
       <ServicesSection />
-
-      <section className="about">
-        Hello
-      </section>
-
-      <section className="doctor">
-        Hello
-      </section>
-
+      <AboutSection />
+      <DoctorSection />
       <section className="cta">
         Hello
       </section>
@@ -182,8 +175,184 @@ const ServicesSection = () => {
       </div>
     </section>
 
-    
+
   );
 };
+
+const AboutSection = () => {
+  return (
+    <section className="about">
+      <div className="tag">
+        <p>WHY CHOOSE US?</p>
+      </div>
+      <br />
+
+      <h1>About LMAO DENTAL CLINIC</h1>
+      <br />
+
+      <div className="description">
+        <p>
+          At Lume Dental, we believe that a healthy smile is a gateway to confidence and well-being.
+
+          <br />
+          <br />
+
+          Our team of experienced dentists and hygienists use the latest technology to provide top-quality dental care in a comfortable and welcoming environment.
+        </p>
+        <p>
+          Whether you need routine cleanings, cosmetic enhancements, or advanced procedures, we are here to help you achieve the smile of your dreams.
+        </p>
+      </div>
+      <br />
+      <br />
+
+      <div className="card_container">
+        <div className="card">
+          <div className="img_container">
+            <img src={about_1} alt="" />
+          </div>
+
+          <br />
+          <h3>State-of-the-art equipment</h3>
+          <p>We use the latest advancements in dental technology to provide the highest quality care.</p>
+        </div>
+        <div className="card">
+          <div className="img_container">
+            <img src={about_2} alt="" />
+          </div>
+
+          <br />
+          <h3>State-of-the-art equipment</h3>
+          <p>We use the latest advancements in dental technology to provide the highest quality care.</p>
+
+        </div>
+        <div className="card diff">
+          <div className="img_container">
+            <img src={about_3} alt="" />
+          </div>
+
+          <br />
+          <h3>State-of-the-art equipment</h3>
+          <p>We use the latest advancements in dental technology to provide the highest quality care.</p>
+
+        </div>
+        <div className="card">
+          <div className="img_container">
+            <img src={about_4} alt="" />
+          </div>
+
+          <br />
+          <h3>State-of-the-art equipment</h3>
+          <p>We use the latest advancements in dental technology to provide the highest quality care.</p>
+
+        </div>
+      </div>
+    </section>
+
+
+  );
+}
+
+const DoctorSection = () => {
+  const [selectedCategory, setSelectedCategory] = useState("All Experts");
+  const sliderRef = useRef(null);
+
+  const doctorDetails = [
+    {
+      name: "Dr. Emily Carter",
+      specialty: "Orthodontist",
+      category: "Orthodontists",
+      img: doctor_1,
+    },
+    {
+      name: "Dr. Benjamin Hayes",
+      specialty: "Prosthodontist",
+      category: "Dentists",
+      img: doctor_2,
+    },
+    {
+      name: "Dr. Lauren Mitchell",
+      specialty: "Cosmetic & General Dentist",
+      category: "Dentists",
+      img: doctor_3,
+    },
+    {
+      name: "Dr. James Whitaker",
+      specialty: "Oral Surgeon",
+      category: "Surgeons",
+      img: doctor_4,
+    },
+    {
+      name: "Dr. Daniel Brooks",
+      specialty: "General & Family Dentist",
+      category: "Dentists",
+      img: doctor_5,
+    },
+  ];
+
+  const scroll = (direction) => {
+    const { current } = sliderRef;
+    if (current) {
+      const scrollAmount = direction === "left" ? -300 : 300;
+      current.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    }
+  };
+
+  const filteredDoctors = selectedCategory === "All Experts"
+    ? doctorDetails
+    : doctorDetails.filter(doc => doc.category === selectedCategory);
+
+  return (
+    <section className="doctor">
+      <div className="tag">
+        <p>OUR ORAL EXPERTS</p>
+      </div>
+
+      <div className="description">
+        <div className="title">
+          <h1>Dental Experts</h1>
+          <h1>You Can Trust</h1>
+        </div>
+
+        <div className="disc">
+          <p>
+            From preventive care to advanced cosmetic and restorative treatments,
+          we provide a full range of dental services tailored to your white needs.
+          </p>
+        </div>
+      </div>
+
+      <div className="controller">
+        <div className="category_sorter">
+          {["All Experts", "Dentists", "Surgeons", "Orthodontists"].map((cat) => (
+            <button
+              key={cat}
+              className={selectedCategory === cat ? "active" : ""}
+              onClick={() => setSelectedCategory(cat)}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+
+        <div className="slider_buttons">
+          <button onClick={() => scroll("left")} className="slider-btn">←</button>
+          <button onClick={() => scroll("right")} className="slider-btn">→</button>
+        </div>
+      </div>
+
+      <div className="slider_container" ref={sliderRef}>
+        {filteredDoctors.map((card, index) => (
+          <div className="card" key={index}>
+            <img src={card.img} alt={card.name} />
+            <h2>{card.name}</h2>
+            <p><i>{card.specialty}</i></p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
+
 
 export default Hero
