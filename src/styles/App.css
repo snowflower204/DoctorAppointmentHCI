@@ -1,0 +1,23 @@
+.Web_wrapper {
+  height: 100%;
+  width: 100%;
+  padding: 0 25px;
+}
+
+section {
+  position: relative;
+  width: 100%;
+  background-color: var(--white-color);
+
+  border-radius: 35px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.tag {
+  color: var(--white-color);
+  border: 2px var(--light-green-color) solid;
+  padding: 5px 10px;
+  border-radius: 35px;
+  width: 300PX;
+}

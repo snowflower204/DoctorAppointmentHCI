@@ -1,0 +1,78 @@
+:root{
+  --yellow-color: #FDDD97;
+  --background-color: #F4F5F7;
+  --white-color: #fff;
+  --light-pink-color: #EED6CE;
+  --dark-pink-color: #EAA9A4;
+  --light-green-color: #AFCEC2;
+  --dark-green-color: #2A5055;
+  --dark-color: #010E10;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+h1{
+  font-family: "Unbounded", sans-serif;
+}
+
+h2,
+h3,
+h4,
+h5,
+p,
+i,
+b,
+a,
+button,
+li {
+  font-family: "Jost", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+i,
+b{
+  color: var(--dark-color);
+}
+
+a{
+  text-decoration: none;
+}
+
+button{
+  cursor: pointer;
+}
+
+html, body, *{
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+body{
+  height: 100vh;
+  width: 100vw;
+  background: var(--background-color);
+  overflow-x: hidden;
+  padding-right: 10px;
+}
+
+#root{
+  height: 100%;
+  width: 100%;
+}

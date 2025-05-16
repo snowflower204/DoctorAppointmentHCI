@@ -1,0 +1,71 @@
+.navbarForWeb{
+    position: relative;
+    height: 100px;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 25px;
+}
+
+.navbarForWeb.stick{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--background-color);
+    z-index: 9999;
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: all 500ms 0ms ease;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+.navbarForWeb.sticky{
+    opacity: 1;
+    transform: translateY(0%);
+}
+
+.navbarForWeb .logo{
+    padding: 30px 0px;
+    height: 100%;
+}
+
+.navbarForWeb .logo img{
+    height: 100%;
+}
+
+.navbarForWeb nav{
+    width: 50%;
+    height: 50%;
+    background-color: var(--white-color);
+    padding: 15px 25px;
+    border-radius: 35px;
+}
+
+.navbarForWeb nav ul{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+.navbarForWeb nav ul li a{
+    color: var(--dark-color);
+}
+
+.navbarForWeb .nav_btn{
+    padding: 15px 0;
+
+}
+
+.navbarForWeb button{
+    height: 100%;
+
+    margin: 35px 0;
+    padding: 15px;
+    border: none;
+    background-color: var(--dark-green-color);
+    color: var(--background-color);
+    border-radius: 35px;
+}
