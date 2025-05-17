@@ -6,6 +6,8 @@ This project simulates a dental clinic appointment system set in **Mandaue City,
 
 [View Live Demo](https://dreigannadoit.github.io/DoctorAppointmentHCI/)
 
+___
+
 ### Frontend Setup (Vite + React)
 
 > Make sure you have the latest version of node installed
@@ -23,6 +25,7 @@ npm run dev
 ```
 
 The frontend should now be running on http://localhost:5173 
+____
 
 ## 👥 Project Members
 - **Robert Bamba**
