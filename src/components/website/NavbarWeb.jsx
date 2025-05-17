@@ -11,7 +11,7 @@ const NavbarWeb = () => {
   return (
     <div className={`navbarForWeb`}>
       <div className="logo">
-        <img src={logo} alt="" />
+        <Link to="/"><img src={logo} alt="" /></Link>
       </div>
 
       <nav>

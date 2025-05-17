@@ -4,6 +4,7 @@ import '../../styles/Hero.css'
 
 import { Link, useNavigate } from 'react-router-dom'
 import { about_1, about_2, about_3, about_4, checkbox, cta, cta_hero, cta_yellow, doctor_1, doctor_2, doctor_3, doctor_4, doctor_5, tooth1, tooth2, tooth3, tooth4, tooth5, tooth6, tooth7 } from '../../assets'
+import OpenStatus from '../../components/website/OpenStatus'
 
 const Hero = () => {
   const navigate = useNavigate();
@@ -27,27 +28,12 @@ const HeroSection = () => {
 
         <div className="hero_text">
           <h1>if it’s not white, it’s not right!</h1>
-          <p>Advanced dental care with a white gentle touch.</p>
+          <p>Advanced dental care with a white gentle touch for the best race.</p>
         </div>
 
         <div className="appointment_info">
           <div className="schedule">
-            <div className="working_hours">
-              <h3>WORKING HOURS</h3>
-              <div>
-                <p>MONDAY - FRIDAY</p>
-                <p>7 AM - 9 PM</p>
-              </div>
-              <div>
-                <p>SATURDAY, SUNDAY</p>
-                <p>10 AM - 3 PM</p>
-              </div>
-            </div>
-
-            <div className="open_status">
-              <p>WE ARE OPEN</p>
-
-            </div>
+            <OpenStatus/>
           </div>
 
           <Link to="/auth">

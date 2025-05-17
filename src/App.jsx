@@ -10,13 +10,18 @@ import AdminDashboard from "./pages/app/admin/AdminDashBoard"
 import { logo_light } from "./assets"
 import Footer from "./components/Footer"
 import PatientDashboard from "./pages/app/patient/PatientDashboard"
+import DentalPrices from "./pages/website/DentalPrices"
 
 const App = () => {
   return (
     <Router basename="/DoctorAppointmentHCI/">
       <Routes>
+        {/* Website */}
         <Route path="/" element={<Hero />} />
         <Route path="/auth" element={<Auth />} />
+        <Route path="/prices" element={<DentalPrices />} />
+
+        {/* Software */}
         <Route path="/patient_informtation" element={<PatientInformation />} />
         <Route path="/admin" element={<AdminDashboard />} />
         <Route path="/doctor" element={<DoctorDashboard />} />

@@ -11,7 +11,7 @@ const NavbarWebSticky = ({ showSticky }) => {
   return (
     <div className={`navbarForWeb stick ${showSticky ? "sticky" : "notSticky"}`}>
       <div className="logo">
-        <img src={logo} alt="" />
+        <Link to="/"><img src={logo} alt="" /></Link>
       </div>
 
       <nav>
