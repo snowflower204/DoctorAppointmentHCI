@@ -14,14 +14,16 @@ const Auth = () => {
     setIsLogin((prev) => !prev);
   };
 
-  const registerCompleted = () => {
+  const registerCompleted = (e) => {
+    e.preventDefault();
     navigate("/patient_informtation")
   }
 
-  const patientDashboardNavigation = () => {
+  const patientDashboardNavigation = (e) => {
+    e.preventDefault();
     navigate("/patient_dashboard")
   }
-  
+
   return (
     <WebWrapper>
       <section className={`auth ${isLogin ? "login" : "register"}`}>
@@ -31,7 +33,7 @@ const Auth = () => {
               <img src={register} alt="" />
             </div>
 
-            <Login toggleForms={toggleForms} navigateTo={patientDashboardNavigation}/>
+            <Login toggleForms={toggleForms} navigateTo={patientDashboardNavigation} />
           </div>
         </div>
 
@@ -41,7 +43,7 @@ const Auth = () => {
               <img src={login} alt="" />
             </div>
 
-            <Register toggleForms={toggleForms} registerCompleted={registerCompleted}/>
+            <Register toggleForms={toggleForms} registerCompleted={registerCompleted} />
           </div>
         </div>
       </section>
