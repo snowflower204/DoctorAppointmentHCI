@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import WebWrapper from "../../components/website/WebWrapper";
 import "../../styles/Auth.css";
-import { google_icon, login, register } from "../../assets";
+import { google_icon, login, login_2, register } from "../../assets";
 import { useNavigate } from "react-router-dom";
 import Login from "../../components/website/Auth/Login";
 import Register from "../../components/website/Auth/Register";
@@ -40,7 +40,7 @@ const Auth = () => {
         <div className="right">
           <div className="content">
             <div className="img_banner login">
-              <img src={login} alt="" />
+              <img src={login_2} alt="" />
             </div>
 
             <Register toggleForms={toggleForms} registerCompleted={registerCompleted} />

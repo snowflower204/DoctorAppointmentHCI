@@ -2,7 +2,7 @@ import React from 'react'
 import { motion, AnimatePresence } from 'framer-motion';
 import { logo } from '../../assets'
 
-const PatientConsentPopUp = ({toggleDropdown, navigateTo}) => {
+const PatientConsentPopUp = ({ toggleDropdown, navigateTo }) => {
     return (
         <motion.div
             className="pop_up_container PatientInformation_popup"
@@ -33,7 +33,7 @@ const PatientConsentPopUp = ({toggleDropdown, navigateTo}) => {
                 >
                     Consent to Data Collection and Processing
                 </motion.h1>
-                
+
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
@@ -41,58 +41,92 @@ const PatientConsentPopUp = ({toggleDropdown, navigateTo}) => {
                 >
                     <p>By checking this box, I confirm that:</p>
                     <br />
-                    <ul>
-                        <motion.li 
-                            initial={{ opacity: 0, x: -10 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: 0.7 }}
-                        >
-                            I voluntarily provide my personal and health-related information for the purpose of booking a dental appointment, receiving dental care, and maintaining patient records.
-                        </motion.li>
+                    <div className='agreements'>
+                        <ul>
+                            <motion.li
+                                initial={{ opacity: 0, x: -10 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: 0.7 }}
+                            >
+                                I voluntarily provide my personal and health-related information for the purpose of booking a dental appointment, receiving dental care, and maintaining patient records.
+                            </motion.li>
 
-                        <motion.li 
-                            initial={{ opacity: 0, x: -10 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: 0.73 }}
-                        >
-                            I understand that this information may include sensitive data such as my name, contact details, medical history, and insurance information.
-                        </motion.li>
+                            <motion.li
+                                initial={{ opacity: 0, x: -10 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: 0.73 }}
+                            >
+                                I understand that this information may include sensitive data such as my name, contact details, medical history, and insurance information.
+                            </motion.li>
 
-                        <motion.li 
-                            initial={{ opacity: 0, x: -10 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: 0.76 }}
-                        >
-                            I consent to the processing of this data by LMAO DENTAL CLINIC, in accordance with the Philippine Data Privacy Act of 2012 (R.A. 10173).
-                        </motion.li>
+                            <motion.li
+                                initial={{ opacity: 0, x: -10 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: 0.76 }}
+                            >
+                                I consent to the processing of this data by LMAO DENTAL CLINIC, in accordance with the Philippine Data Privacy Act of 2012 (R.A. 10173).
+                            </motion.li>
 
-                        <motion.li 
-                            initial={{ opacity: 0, x: -10 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: 0.79 }}
-                        >
-                            I understand that my data will be securely stored, used only by authorized personnel, and not shared with third parties without my consent unless required by law.
-                        </motion.li>
+                            <motion.li
+                                initial={{ opacity: 0, x: -10 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: 0.76 }}
+                            >
+                                I understand that my electronic submissions and agreement through this form are legally recognized under the Electronic Commerce Act of 2000 (R.A. 8792).
+                            </motion.li>
 
-                        <motion.li 
-                            initial={{ opacity: 0, x: -10 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: 0.82 }}
-                        >
-                            I am aware of my rights to access, correct, or withdraw my data at any time.
-                        </motion.li>
+                            <motion.li
+                                initial={{ opacity: 0, x: -10 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: 0.76 }}
+                            >
+                                I acknowledge that I am entitled to fair, professional service as protected under the Consumer Act of the Philippines (R.A. 7394).
+                            </motion.li>
 
-                        <motion.li 
-                            initial={{ opacity: 0, x: -10 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: 0.85 }}
-                        >
-                            I agree to be contacted for appointment reminders or healthcare-related communications.
+                            <motion.li
+                                initial={{ opacity: 0, x: -10 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: 0.76 }}
+                            >
+                                I understand that any unauthorized access or misuse of my information is punishable under the Cybercrime Prevention Act of 2012 (R.A. 10175).
+                            </motion.li>
 
-                        </motion.li>
-                    </ul>
+                            <motion.li
+                                initial={{ opacity: 0, x: -10 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: 0.79 }}
+                            >
+                                I understand that my data will be securely stored, used only by authorized personnel, and not shared with third parties without my consent unless required by law.
+                            </motion.li>
+
+                            <motion.li
+                                initial={{ opacity: 0, x: -10 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: 0.82 }}
+                            >
+                                I am aware of my rights to access, correct, or withdraw my data at any time.
+                            </motion.li>
+
+                            <motion.li
+                                initial={{ opacity: 0, x: -10 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: 0.85 }}
+                            >
+                                I agree to be contacted for appointment reminders or healthcare-related communications.
+
+                            </motion.li>
+
+                            <motion.li
+                                initial={{ opacity: 0, x: -10 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: 0.88 }}
+                            >
+                                I consent to being contacted via email, SMS, or phone for appointment reminders, follow-ups, or dental health-related communication.
+                            </motion.li>
+                        </ul>
+                    </div>
                 </motion.div>
-                
+
                 <br />
                 <motion.div
                     initial={{ opacity: 0 }}
@@ -107,7 +141,7 @@ const PatientConsentPopUp = ({toggleDropdown, navigateTo}) => {
                 </motion.div>
                 <br />
 
-                <motion.div 
+                <motion.div
                     className="checkbox"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
@@ -120,7 +154,7 @@ const PatientConsentPopUp = ({toggleDropdown, navigateTo}) => {
                 </motion.div>
 
                 <br />
-                <motion.div 
+                <motion.div
                     className="button_container"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}

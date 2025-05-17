@@ -32,6 +32,7 @@ import hann from "./imgs/hann.jpg"
 import cta_hero from "./imgs/cta_hero.png"
 
 import login from "./imgs/login.png"
+import login_2 from "./imgs/login_2.jpg"
 import register from "./imgs/register.jpg"
 
 export {
@@ -59,6 +60,7 @@ export {
     doctor_5,
     cta_hero,
     login,
+    login_2,
     register,
     drei,
     abby,
