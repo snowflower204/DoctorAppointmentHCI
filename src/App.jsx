@@ -28,7 +28,6 @@ const App = () => {
         <Route path="/patient_dashboard" element={<PatientDashboard />} />
       </Routes>
       
-      
       <Footer/>
     </Router>
   )
