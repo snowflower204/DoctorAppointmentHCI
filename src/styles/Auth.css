@@ -1,5 +1,5 @@
 .auth{
-    height: 100vh;
+    height: 110vh;
     padding: 35px;
     overflow: hidden;
 
@@ -9,10 +9,10 @@
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.auth.register{
+/* .auth.register{
     height: 105vh;
 
-}
+} */
 
 .auth .left,
 .auth .right {
