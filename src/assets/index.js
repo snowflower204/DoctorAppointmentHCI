@@ -25,6 +25,10 @@ import doctor_3 from "./imgs/doctor_3.png"
 import doctor_4 from "./imgs/doctor_4.png"
 import doctor_5 from "./imgs/doctor_5.png"
 
+import drei from "./imgs/drei.jpg"
+import abby from "./imgs/abby.jpg"
+import hann from "./imgs/hann.jpg"
+
 import cta_hero from "./imgs/cta_hero.png"
 
 import login from "./imgs/login.png"
@@ -55,5 +59,8 @@ export {
     doctor_5,
     cta_hero,
     login,
-    register
+    register,
+    drei,
+    abby,
+    hann
 }
