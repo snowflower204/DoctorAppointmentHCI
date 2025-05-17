@@ -8,6 +8,8 @@ import PatientInformation from "./pages/app/PatientInformation"
 import DoctorDashboard from "./pages/app/doctor/DoctorDashboard"
 import AdminDashboard from "./pages/app/admin/AdminDashBoard"
 import { logo_light } from "./assets"
+import Footer from "./components/Footer"
+import PatientDashboard from "./pages/app/patient/PatientDashboard"
 
 const App = () => {
   return (
@@ -18,15 +20,11 @@ const App = () => {
         <Route path="/patient_informtation" element={<PatientInformation />} />
         <Route path="/admin" element={<AdminDashboard />} />
         <Route path="/doctor" element={<DoctorDashboard />} />
-        <Route path="/patient" element={<PatientInformation />} />
+        <Route path="/patient_dashboard" element={<PatientDashboard />} />
       </Routes>
       
       
-      <div className="footer">
-        <img src={logo_light} alt="" />
-        <p>Smart Appointment Scheduler for Community (Dental) Clinics</p>
-        <p>A PROJECT WE MADE || ALL RIGHTS RESERVED 2025</p>
-      </div>
+      <Footer/>
     </Router>
   )
 }

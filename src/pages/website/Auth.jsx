@@ -1,9 +1,48 @@
-import React from 'react'
+import React, { useState } from "react";
+import WebWrapper from "../../components/website/WebWrapper";
+import "../../styles/Auth.css";
+import { google_icon, login, register } from "../../assets";
+import { useNavigate } from "react-router-dom";
+import Login from "../../components/website/Auth/Login";
+import Register from "../../components/website/Auth/Register";
 
 const Auth = () => {
-  return (
-    <div>Auth</div>
-  )
-}
+  const navigate = useNavigate();
+  const [isLogin, setIsLogin] = useState(true);
 
-export default Auth
+  const toggleForms = () => {
+    setIsLogin((prev) => !prev);
+  };
+
+  const registerCompleted = () => {
+    navigate("/patient_informtation")
+  }
+  
+  return (
+    <WebWrapper>
+      <section className={`auth ${isLogin ? "login" : "register"}`}>
+        <div className="left">
+          <div className="content">
+            <div className="img_banner register">
+              <img src={register} alt="" />
+            </div>
+
+            <Login toggleForms={toggleForms}/>
+          </div>
+        </div>
+
+        <div className="right">
+          <div className="content">
+            <div className="img_banner login">
+              <img src={login} alt="" />
+            </div>
+
+            <Register toggleForms={toggleForms} registerCompleted={registerCompleted}/>
+          </div>
+        </div>
+      </section>
+    </WebWrapper>
+  );
+};
+
+export default Auth;

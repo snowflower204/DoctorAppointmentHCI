@@ -22,6 +22,26 @@
   background: #555; 
 }
 
+html, body, *{
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body{
+  height: 100vh;
+  width: 100vw;
+  background: var(--background-color);
+  overflow-x: hidden;
+  padding-right: 10px;
+}
+
+#root{
+  height: 100%;
+  width: 100%;
+}
+
 h1{
   font-family: "Unbounded", sans-serif;
 }
@@ -35,7 +55,9 @@ i,
 b,
 a,
 button,
-li {
+li,
+label,
+input {
   font-family: "Jost", sans-serif;
 }
 
@@ -58,21 +80,8 @@ button{
   cursor: pointer;
 }
 
-html, body, *{
-  margin: 0%;
-  padding: 0%;
-  box-sizing: border-box;
-}
-
-body{
-  height: 100vh;
-  width: 100vw;
-  background: var(--background-color);
-  overflow-x: hidden;
-  padding-right: 10px;
-}
-
-#root{
-  height: 100%;
-  width: 100%;
+input {
+  padding: 5px 10px;
+  border-radius: 35px;
+  border: 1px var(--dark-color) solid;
 }

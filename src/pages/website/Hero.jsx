@@ -1,21 +1,20 @@
 import React, { useState, useRef } from 'react'
 import WebWrapper from '../../components/website/WebWrapper'
-
-
 import '../../styles/Hero.css'
-import { Link } from 'react-router-dom'
-import { about_1, about_2, about_3, about_4, checkbox, cta, cta_yellow, doctor_1, doctor_2, doctor_3, doctor_4, doctor_5, tooth1, tooth2, tooth3, tooth4 } from '../../assets'
+
+import { Link, useNavigate } from 'react-router-dom'
+import { about_1, about_2, about_3, about_4, checkbox, cta, cta_hero, cta_yellow, doctor_1, doctor_2, doctor_3, doctor_4, doctor_5, tooth1, tooth2, tooth3, tooth4, tooth5, tooth6, tooth7 } from '../../assets'
 
 const Hero = () => {
+  const navigate = useNavigate();
+
   return (
     <WebWrapper>
       <HeroSection />
       <ServicesSection />
       <AboutSection />
       <DoctorSection />
-      <section className="cta">
-        Hello
-      </section>
+      <Hero_CTA navigate={navigate} />
 
     </WebWrapper>
   )
@@ -82,7 +81,7 @@ const ServicesSection = () => {
       title: "Implants & Prosthetics",
       subtitle: "Restore function and aesthetics with durable replacements.",
       services: ["Tooth-Colored Fillings", "Veneers", "Smile Makeovers"],
-      img: tooth2,
+      img: tooth5,
     },
     {
       title: "Restorative Dentistry",
@@ -100,19 +99,19 @@ const ServicesSection = () => {
       title: "Orthodontics",
       subtitle: "Straighten and align teeth for a healthier bite.",
       services: ["Traditional Braces", "Clear Aligners (e.g., Invisalign)", "Retainers"],
-      img: tooth1,
+      img: tooth2,
     },
     {
       title: "Pediatric Dentistry",
       subtitle: "Gentle, friendly dental care for children.",
       services: ["Child Dental Exams & Cleanings", "Sealants & Fluoride Treatments", "Habit Counseling (Thumb-sucking, etc.)"],
-      img: tooth2,
+      img: tooth6,
     },
     {
       title: "Emergency Dental Care",
       subtitle: "Prompt treatment when you need it most.",
       services: ["Toothaches", "Chipped or Broken Teeth", "Lost Fillings or Crowns"],
-      img: tooth3,
+      img: tooth7,
     },
   ];
 
@@ -127,7 +126,7 @@ const ServicesSection = () => {
   const sliderRef = useRef(null);
 
   return (
-    <section className="service">
+    <section className="service" id='service'>
       <div className="tag">
         <p>OUR ORAL SERVICES</p>
       </div>
@@ -174,14 +173,38 @@ const ServicesSection = () => {
         </div>
       </div>
     </section>
-
-
   );
 };
 
 const AboutSection = () => {
+  const aboutInformation = [
+    {
+      img: about_1,
+      class: "",
+      header: "State-of-the-art equipment",
+      desc: "We use the latest advancements in dental technology to provide the highest quality care."
+    },
+    {
+      img: about_2,
+      class: "",
+      header: "Experienced & caring professionals",
+      desc: "Our team of dentists, hygienists, and specialists brings years of expertise and a passion for patient care."
+    },
+    {
+      img: about_3,
+      class: "diff",
+      header: "Pain-free, stress- free treatments",
+      desc: "We understand that dental visits can be stressful, which is why we prioritize gentle techniques."
+    },
+    {
+      img: about_4,
+      class: "",
+      header: "Personalized approach for every patient",
+      desc: "Every smile is unique, and so is every treatment plan. We take time to understand your particular oral problem and then provide the appropriate oral service."
+    },
+  ]
   return (
-    <section className="about">
+    <section className="about" id='about'>
       <div className="tag">
         <p>WHY CHOOSE US?</p>
       </div>
@@ -207,49 +230,20 @@ const AboutSection = () => {
       <br />
 
       <div className="card_container">
-        <div className="card">
-          <div className="img_container">
-            <img src={about_1} alt="" />
+        {aboutInformation.map((card, index) => (
+          <div className={`card ${card.class}`} key={index}>
+            <div className="img_container">
+              <img src={card.img} alt="" />
+            </div>
+
+            <br />
+            <h3>{card.header}</h3>
+            <p>{card.desc}</p>
           </div>
+        ))}
 
-          <br />
-          <h3>State-of-the-art equipment</h3>
-          <p>We use the latest advancements in dental technology to provide the highest quality care.</p>
-        </div>
-        <div className="card">
-          <div className="img_container">
-            <img src={about_2} alt="" />
-          </div>
-
-          <br />
-          <h3>State-of-the-art equipment</h3>
-          <p>We use the latest advancements in dental technology to provide the highest quality care.</p>
-
-        </div>
-        <div className="card diff">
-          <div className="img_container">
-            <img src={about_3} alt="" />
-          </div>
-
-          <br />
-          <h3>State-of-the-art equipment</h3>
-          <p>We use the latest advancements in dental technology to provide the highest quality care.</p>
-
-        </div>
-        <div className="card">
-          <div className="img_container">
-            <img src={about_4} alt="" />
-          </div>
-
-          <br />
-          <h3>State-of-the-art equipment</h3>
-          <p>We use the latest advancements in dental technology to provide the highest quality care.</p>
-
-        </div>
       </div>
     </section>
-
-
   );
 }
 
@@ -271,13 +265,13 @@ const DoctorSection = () => {
       img: doctor_2,
     },
     {
-      name: "Dr. Lauren Mitchell",
+      name: "Dr. James Whitaker ",
       specialty: "Cosmetic & General Dentist",
       category: "Dentists",
       img: doctor_3,
     },
     {
-      name: "Dr. James Whitaker",
+      name: "Dr. Lauren Mitchell",
       specialty: "Oral Surgeon",
       category: "Surgeons",
       img: doctor_4,
@@ -303,7 +297,7 @@ const DoctorSection = () => {
     : doctorDetails.filter(doc => doc.category === selectedCategory);
 
   return (
-    <section className="doctor">
+    <section className="doctor" id='doctor'>
       <div className="tag">
         <p>OUR ORAL EXPERTS</p>
       </div>
@@ -317,7 +311,7 @@ const DoctorSection = () => {
         <div className="disc">
           <p>
             From preventive care to advanced cosmetic and restorative treatments,
-          we provide a full range of dental services tailored to your white needs.
+            we provide a full range of dental services tailored to your white needs.
           </p>
         </div>
       </div>
@@ -353,6 +347,37 @@ const DoctorSection = () => {
     </section>
   );
 };
+
+const Hero_CTA = ({navigate}) => {
+  return (
+    <section className="cta">
+      <div className="cta_content">
+        <div className="text ">
+          <h1>
+            book Your appointment
+            <br />
+            within minutes
+          </h1>
+
+          <p>
+            Scheduling your visit is quick and effortless.
+            <br />
+            A whiter brighter smile is just around the corner.
+          </p>
+          <br />
+          <br />
+
+          <button onClick={(e) => navigate("/auth")}>
+            <span>Explore More</span>
+            <img src={cta_yellow} alt="" />
+          </button>
+        </div>
+
+        <img src={cta_hero} alt="" />
+      </div>
+    </section>
+  );
+}
 
 
 export default Hero

@@ -1,0 +1,117 @@
+.auth{
+    height: 100vh;
+    padding: 35px;
+
+    display: flex;
+    flex-direction: row;
+    gap: 35px;
+}
+
+.auth .left,
+.auth .right {
+    height: 100%;
+    width: 50%;
+}
+
+.auth .left .content,
+.auth .right .content{
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.auth>div .content .img_banner,
+.auth>div .content .form{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+    transform: translateY(0);
+
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.auth.login>div .content .img_banner.register,
+.auth.register>div .content .img_banner.login{
+    transform: translateY(150%);
+}
+.auth.login>div .content .form.register,
+.auth.register>div .content .form.login{
+    transform: translateY(-150%);
+}
+.auth.login>div .content .img_banner.login,
+.auth.login>div .content .form.login,
+.auth.register>div .content .img_banner.register,
+.auth.register>div .content .form.register{
+    transform: translateY(0%);
+}
+
+
+.auth>div .content .img_banner{
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.auth>div .content .img_banner img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    
+}
+
+.auth .form,
+.auth .form form{
+    display: flex;
+    flex-direction: column;
+}
+
+.auth .form .tag{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.auth .form {
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.auth .form h1{
+    font-size: 6vh;
+    text-transform: capitalize;
+}
+
+.auth .form form button{
+    width: 200px;
+    padding: 10px 5px;
+    border-radius: 35px;
+    border: none;
+    background-color: var(--dark-green-color);
+    color: var(--background-color);
+}
+
+.auth .form a{
+    text-align: center;
+    color: var(--dark-color);
+}
+
+.auth .form>button {
+    padding: 15px 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 35px;
+    gap: 20px;
+    background-color: var(--background-color);
+}
+
+.auth .form>button.google{
+    padding: 10px 10px;
+    background-color: var(--dark-pink-color);
+}
+
+.auth .form>button img{
+    height: 100%;
+}

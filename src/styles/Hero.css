@@ -161,6 +161,9 @@
   align-items: center;
   border-radius: 25px;
 }
+.service .slider-container .card .img_container img{
+  height: 90px;
+}
 
 .service .slider-container .card h2 {
   line-height: 100%;
@@ -255,9 +258,20 @@
   align-items: center;
 }
 
+@media screen and (min-width: 1400px) {
+  .about .card_container {
+    justify-content: center;
+    gap: 25px;
+  }
+}
+
 .about .card_container .card {
-  height: 300px;
+  height: 350px;
   width: 280px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
   border: 3px solid var(--background-color);
   border-radius: 35px;
   padding: 25px;
@@ -363,4 +377,64 @@
 
 .doctor .slider_container .card p i {
   color: #a8a8a8;
+}
+
+
+
+/*--Hero_CTA--*/
+/*--Hero_CTA--*/
+/*--Hero_CTA--*/
+
+.cta{
+  position: relative; 
+  height: 400px;
+  background: radial-gradient(circle,rgba(255, 255, 255, 1) 0%, rgba(234, 169, 164, 1) 43%);
+}
+
+.cta_content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+
+  height: 100%;
+  width: 100%;
+  padding: 35px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+
+  background-image: radial-gradient(circle, var(--background-color) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.cta_content>img{
+  position: absolute;
+  height: 100%;
+  right: 0;
+  bottom: 0;
+}
+
+.cta_content .text {
+  width: 80%;
+}
+
+.cta_content .text h1{
+  text-transform: capitalize;
+  font-size: 7vh;
+}
+
+.cta_content .text button {
+  position: relative;
+  border-radius: 35px;
+  background-color: var(--background-color);
+  padding: 10px 10px 10px 20px;
+  width: 250px;
+  border: 1px var(--background-color) solid;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

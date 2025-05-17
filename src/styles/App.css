@@ -18,8 +18,9 @@ section {
   border: 2px var(--light-green-color) solid;
   padding: 5px 10px;
   border-radius: 35px;
-  width: 300PX;
+  width: 150PX;
   text-align: center;
+  font-size: 12px;
 }
 
 

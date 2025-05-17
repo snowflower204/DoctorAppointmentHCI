@@ -1,6 +1,7 @@
 import React from "react";
 import { logo } from "../../assets";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { HashLink as Link } from 'react-router-hash-link';
 
 import '../../styles/Nav.css'
 
@@ -15,11 +16,11 @@ const NavbarWebSticky = ({ showSticky }) => {
 
       <nav>
         <ul>
-          <li><Link to="/">SERVICES</Link></li>
-          <li><Link to="/">DOCTORS</Link></li>
-          <li><Link to="/">PRICING</Link></li>
-          <li><Link to="/">ABOUT US</Link></li>
-          <li><Link to="/">CONTACT</Link></li>
+          <li><Link smooth to="/#service">SERVICES</Link></li>
+          <li><Link smooth to="/#doctor">DOCTORS</Link></li>
+          <li><Link smooth to="/">PRICING</Link></li>
+          <li><Link smooth to="/#about">ABOUT US</Link></li>
+          <li><Link smooth to="/">CONTACT</Link></li>
         </ul>
       </nav>
 
