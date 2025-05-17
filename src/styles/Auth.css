@@ -83,20 +83,20 @@
 }
 
 .auth .form,
+.auth .form .wrapper_content,
 .auth .form form{
     display: flex;
     flex-direction: column;
 }
 
-.auth .form .tag{
-    position: absolute;
-    top: 0;
-    left: 0;
+.auth .form {
+    justify-content: space-between;
+    gap: 20px;
 }
 
-.auth .form {
-    justify-content: flex-end;
+.auth .form .wrapper_content{
     gap: 20px;
+
 }
 
 .auth .form h1{
@@ -118,7 +118,7 @@
     color: var(--dark-color);
 }
 
-.auth .form>button {
+.auth .form .wrapper_content>button {
     padding: 15px 10px;
 
     display: flex;
@@ -130,11 +130,11 @@
     background-color: var(--background-color);
 }
 
-.auth .form>button.google{
+.auth .form .wrapper_content>button.google{
     padding: 10px 10px;
     background-color: var(--dark-pink-color);
 }
 
-.auth .form>button img{
+.auth .form .wrapper_content>button img{
     height: 100%;
 }
