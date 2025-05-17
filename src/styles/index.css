@@ -57,7 +57,10 @@ a,
 button,
 li,
 label,
-input {
+input,
+select,
+th,
+td  {
   font-family: "Jost", sans-serif;
 }
 
@@ -80,8 +83,17 @@ button{
   cursor: pointer;
 }
 
-input {
+input,
+select,
+.dropdown-container .dropdown-header {
   padding: 5px 10px;
   border-radius: 35px;
   border: 1px var(--dark-color) solid;
 }
+
+.PatientInformation label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+

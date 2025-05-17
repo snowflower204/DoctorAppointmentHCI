@@ -1,4 +1,4 @@
-import logo from "./logo/logo.svg"
+import logo from "./logo/LOGO.png"
 import logo_light from "./logo/LOGO_LIGHT.png"
 
 import cta from "./icons/cta.png"

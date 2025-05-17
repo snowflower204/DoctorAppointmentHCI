@@ -3,6 +3,7 @@
   background-image: linear-gradient(272deg, rgba(42, 80, 85, 0) 0%, rgba(42, 80, 85, 0.5) 25%, rgba(42, 80, 85, 0.95) 100%), url(../assets/imgs/hero.png);
   background-size: cover;
   background-position: 0% 50%;
+  overflow: hidden;
 }
 
 .hero .content {
@@ -72,6 +73,7 @@
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .service .description {
@@ -207,6 +209,7 @@
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .about>h1 {
@@ -284,6 +287,7 @@
 
 .doctor {
   padding: 35px;
+  overflow: hidden;
 }
 
 .doctor .description {
@@ -368,6 +372,7 @@
 .cta{
   position: relative; 
   height: 400px;
+  overflow: hidden;
   background: radial-gradient(circle,rgba(255, 255, 255, 1) 0%, rgba(234, 169, 164, 1) 43%);
 }
 

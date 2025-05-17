@@ -1,0 +1,164 @@
+.PatientInformation_wrapper {
+    width: 100%;
+    padding: 25px 25px 5px;
+}
+
+.PatientInformation {
+    padding: 25px;
+}
+
+.PatientInformation>h1 {
+    font-weight: 400;
+}
+
+.PatientInformation form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.PatientInformation form>div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.PatientInformation form>div>div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.PatientInformation form>div>div input,
+.PatientInformation form>div>div>select {
+    width: 100%;
+}
+
+.PatientInformation form>div .name,
+.PatientInformation form>div .first_name,
+.PatientInformation form>div .middle_initial,
+.PatientInformation form>div .last_name,
+.PatientInformation form>div .dob,
+.PatientInformation form>div .email,
+.PatientInformation form>div .phone,
+.PatientInformation form>div .gender {
+    width: calc(20% - 8px)
+}
+
+.PatientInformation form>div .address {
+    width: calc(40% - 6px)
+}
+
+
+.PatientInformation form>div .allergies,
+.PatientInformation form>div .illness,
+.PatientInformation form>div .check{
+    width: 100%;
+} 
+
+.PatientInformation form>div .check{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.PatientInformation form>div .check .checkIfInsurance{
+    width: calc(20% - 10px);
+}
+
+.PatientInformation form>div .check .radio_group{
+    gap: 5px;
+}
+.PatientInformation form>div .check .radio_group,
+.PatientInformation form>div .check .radio_group label{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.PatientInformation form>div .check .insurance_name {
+    width: calc(80% - 10px);
+}
+.PatientInformation form>div .check .insurance_num {
+    width: 100%;
+}
+
+.PatientInformation form>button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    background-color: var(--dark-green-color);
+    color: var(--background-color);
+    border-radius: 35px;
+}
+
+
+
+.pop_up_container.PatientInformation_popup{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 999;
+    background: #afcec2a6;
+    backdrop-filter: blur(5px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pop_up_container .block{
+    position: relative;
+    max-width: 829px;
+    background-color: var(--background-color);
+    border-radius: 35px;
+    padding: 25px;
+    font-weight: 400;
+}
+
+.pop_up_container .block img{
+    height: 40px;
+}
+
+.pop_up_container .block h1{
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.pop_up_container .block ul{
+    margin-left: 20px;
+}
+
+.pop_up_container .block .button_container{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.pop_up_container .block .button_container{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.pop_up_container .block .button_container button{
+    padding: 15px 35px;
+    border: none;
+    background-color: var(--dark-green-color);
+    color: var(--background-color);
+    border-radius: 35px;
+}
+
+.pop_up_container .block .button_container button:first-child{
+    background-color: var(--white-color);
+    color: var(--dark-green-color);
+
+}

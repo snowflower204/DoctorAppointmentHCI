@@ -1,0 +1,9 @@
+.PatientWrapper {
+    width: 100%;
+    padding: 25px 25px 0px;
+}
+
+.patient_window{
+    min-height: 90vh;
+    padding: 25px;
+}
