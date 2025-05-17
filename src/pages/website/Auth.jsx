@@ -17,6 +17,10 @@ const Auth = () => {
   const registerCompleted = () => {
     navigate("/patient_informtation")
   }
+
+  const patientDashboardNavigation = () => {
+    navigate("/patient_dashboard")
+  }
   
   return (
     <WebWrapper>
@@ -27,7 +31,7 @@ const Auth = () => {
               <img src={register} alt="" />
             </div>
 
-            <Login toggleForms={toggleForms}/>
+            <Login toggleForms={toggleForms} navigateTo={patientDashboardNavigation}/>
           </div>
         </div>
 

@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { use } from 'react'
 import { google_icon } from '../../../assets'
 
-const Login = ({toggleForms}) => {
+const Login = ({toggleForms, navigateTo}) => {
+  
   return (
     <div className="form login">
       <div className="tag">
@@ -28,7 +29,7 @@ const Login = ({toggleForms}) => {
         <input type="password" />
         <br />
 
-        <button>LOGIN</button>
+        <button onClick={navigateTo}>LOGIN</button>
       </form>
 
       <a href="#">
