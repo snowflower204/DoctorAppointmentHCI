@@ -1,9 +1,517 @@
-.PatientWrapper {
-    width: 100%;
-    padding: 25px 25px 0px;
+/* PatientDashboard.css */
+
+/* Variables */
+:root {
+  --white-color: #ffffff;
+  --background-color: #f8f9fa;
+  --dark-color: #2a5055;
+  --dark-green-color: #2a5055;
+  --light-green-color: #e0ecec;
+  --dark-pink-color: #eaa9a4;
+  --primary-color: #2a5055;
+  --secondary-color: #eaa9a4;
+  --text-color: #333333;
+  --muted-text: #6c757d;
+  --border-color: #e0e0e0;
 }
 
-.patient_window{
-    min-height: 90vh;
-    padding: 25px;
+/* Base Styles */
+* {
+  box-sizing: border-box;
+  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  scroll-behavior: smooth;
+}
+
+/* Layout */
+.patient_window {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar
+.sidebar {
+  width: 250px;
+  background-color: var(--white-color);
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  position: fixed;
+  height: 100vh;
+}
+
+.sidebar_header {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 20px;
+}
+
+.sidebar_header h2 {
+  color: var(--primary-color);
+  margin: 0;
+}
+
+.sidebar_item {
+  padding: 12px 15px;
+  margin: 5px 0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.sidebar_item:hover {
+  background-color: var(--light-green-color);
+}
+
+.sidebar_item.active {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}
+
+*/
+
+/* Main Content */
+.main_content {
+  margin-left: 250px;
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* Header */
+.dashboard-header {
+    background-color: #EAA9A4;
+    color: black;
+    padding: 15px 35px;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 12px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Fix banner (removing floating effect) */
+.banner-section {
+    background: rgba(255, 255, 255, 0.62);;
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    border-radius: 8px;
+    position: relative; 
+    margin-top: 0; 
+    text-align: center;
+}
+
+
+/* Image Styling */
+.dashboard-header img {
+    width: 50px; 
+    height: auto;
+    margin-left: 15px;
+    border-radius: 8px;
+
+}
+
+.dashboard-container{
+  color: black;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 15px 15px;
+
+}
+
+
+
+
+.dashboard-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.dashboard-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.booking-section {
+    flex: 1;
+    max-width: 40%;
+}
+
+.doctor-list-box {
+    flex: 1;
+    max-width: 55%;
+}
+
+/* Bottom Appointment Section */
+.appointment-section {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Styling for Booking Box */
+.booking-box {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+
+.booking-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+}
+
+/* Statistics */
+.statistics_item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px dashed var(--border-color);
+}
+
+.statistics_item:last-child {
+  border-bottom: none;
+}
+
+/* Table */
+.patients_table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.patients_table th {
+  text-align: left;
+  padding: 12px 15px;
+  background-color: var(--light-green-color);
+  color: var(--primary-color);
+}
+
+.patients_table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.patients_table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Appointments */
+.appointment_item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  margin-bottom: 10px;
+  background-color: var(--background-color);
+  border-radius: 8px;
+}
+
+.appointment_item:last-child {
+  margin-bottom: 0;
+}
+
+.appointment_info h3 {
+  margin: 0 0 5px;
+}
+
+.appointment_info p {
+  margin: 0;
+  color: var(--muted-text);
+  font-size: 14px;
+}
+
+/* Calendar */
+.calendar-container {
+  background: rgba(248, 89, 195, 0.41);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  box-shadow: 0px 4px 8px rgba(238, 100, 169, 0.32);
+  width: 100%;
+  max-width:350px;
+  text-align: center;
+  padding: 15px;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+}
+
+.calendar-day {
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+  background: #f4f4f4;
+}
+
+.calendar-day:hover {
+  background-color: #ddd;
+}
+
+.selected {
+  background-color: #2a9d8f;
+  color: white;
+  font-weight: bold;
+}
+
+
+/* Responsive */
+@media (max-width: 992px) {
+  .sidebar {
+    width: 200px;
+  }
+  .main_content {
+    margin-left: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .main_content {
+    margin-left: 0;
+  }
+  .dashboard_header h1 {
+    font-size: 20px;
+  }
+  .card_header h2 {
+    font-size: 16px;
+  }
+}
+
+/* Banner */
+.clinic_status {
+  background-color: var(--dark-pink-color);
+  color: var(--white-color);
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+/* Utilities */
+.text_primary {
+  color: var(--primary-color);
+}
+
+.text_muted {
+  color: var(--muted-text);
+}
+
+.mb_20 {
+  margin-bottom: 20px;
+}
+
+.mt_20 {
+  margin-top: 20px;
+}
+
+.flex_center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shadow_md {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+.shadow_lg {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background-color);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 4px;
+}
+
+/* Tooltip */
+.tooltip {
+  position: relative;
+  cursor: pointer;
+}
+.tooltip::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  pointer-events: none;
+  white-space: nowrap;
+  transition: opacity 0.3s ease;
+}
+.tooltip:hover::after {
+  opacity: 1;
+}
+
+/* Badge */
+.badge {
+  background-color: var(--secondary-color);
+  color: var(--white-color);
+  border-radius: 50%;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+
+/* PatientWrapper styling */
+.patient-wrapper {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.doctor-list-box {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-height: 300px;
+    overflow-y: auto; /* Enables scrolling */
+}
+
+/* Doctor List Styling */
+.doctor-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Doctor Item */
+.doctor-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    transition: 0.3s ease-in-out;
+}
+
+/* Circular Doctor Avatar */
+.doctor-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Makes it circular */
+    object-fit: cover;
+}
+
+
+/* Background Colors */
+
+
+.appointment-box {
+    border: 1px solid #FDDD97; /* Soft Yellow Accent */
+}
+
+/* Buttons: Glassy White */
+.glassy-button {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 12px 16px;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    border: 2px solid white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.glassy-button:hover {
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 0px 6px 12px rgba(255, 255, 255, 0.5);
+}
+
+.select-box {
+    margin-top:20px;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(12px);
+    position
+    padding: 5px 5px;
+    font-size: 16px;
+    font-weight: bold;
+    border: 2px solid white;
+    border-radius: 10px;
+    color: black;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+}
+
+
+.select-box:hover {
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0px 6px 12px rgba(255, 255, 255, 0.4);
+}
+
+.glassy-button {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(12px);
+    padding: 12px 16px;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    border: 2px solid white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+    text-align: center;
+}
+
+.time-picker {
+    margin-top: 15px;
+}
+
+.glassy-button:hover {
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0px 6px 12px rgba(255, 255, 255, 0.4);
 }

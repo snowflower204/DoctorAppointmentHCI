@@ -5,7 +5,7 @@ const PatientWrapper = ({ children }) => {
   return (
     <>
         <NavBar />
-        <div className='PatientWrapper'>{ children }</div>
+        <div className='patient-wrapper'>{ children }</div>
     </>
   )
 }
